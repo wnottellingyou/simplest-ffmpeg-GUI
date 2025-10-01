@@ -1,0 +1,7 @@
+{
+    "ffmpeg_path": "ffmpeg",
+    "last_input_dir": "D:/PYfile/MergeVid/VideoClip",
+    "last_output_dir": "",
+    "default_format": "mp4",
+    "default_codec": "libx264"
+}
