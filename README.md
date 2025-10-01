@@ -73,11 +73,12 @@ A comprehensive, user-friendly GUI application for FFmpeg built with Python and 
 1. **Python 3.7 or higher**
    - Download from [python.org](https://www.python.org/downloads/)
 
-2. **FFmpeg**
+2. **FFmpeg (REQUIRED - Must be downloaded and installed)**
    - Download from [ffmpeg.org](https://ffmpeg.org/download.html)
-   - **Important**: Add FFmpeg to your system PATH
+   - **CRITICAL**: FFmpeg must be downloaded, installed, and added to your system PATH
+   - This application will NOT work without FFmpeg properly installed
 
-   **Windows Installation:**
+   **Windows Installation Steps:**
    - Download FFmpeg build (recommended: gyan.dev or BtbN builds)
    - Extract to a folder (e.g., `C:\ffmpeg`)
    - Add `C:\ffmpeg\bin` to system PATH:
@@ -91,22 +92,50 @@ A comprehensive, user-friendly GUI application for FFmpeg built with Python and 
 # Check Python
 python --version
 
-# Check FFmpeg
+# Check FFmpeg (MUST work before running the application)
 ffmpeg -version
 
-# Check FFprobe
+# Check FFprobe (required for video info)
 ffprobe -version
 
-# Check FFplay
+# Check FFplay (required for video preview)
 ffplay -version
 ```
 
+**Note**: If any of the FFmpeg commands fail, the application will not work properly. Please ensure FFmpeg is correctly installed and added to PATH.
+
 ## Installation
+
+### Step 1: Download and Install FFmpeg (REQUIRED)
+**⚠️ IMPORTANT: You MUST install FFmpeg before using this application**
+
+1. **Download FFmpeg**:
+   - Visit [ffmpeg.org/download.html](https://ffmpeg.org/download.html)
+   - For Windows: Download from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) or [BtbN GitHub](https://github.com/BtbN/FFmpeg-Builds/releases)
+
+2. **Install FFmpeg**:
+   - Extract the downloaded archive to a folder (e.g., `C:\ffmpeg`)
+   - Add the `bin` folder to your system PATH:
+     - Search "Environment Variables" in Windows Start menu
+     - Click "Edit the system environment variables"
+     - Click "Environment Variables" button
+     - Find "Path" in System variables, click "Edit"
+     - Click "New" and add the path to FFmpeg bin folder (e.g., `C:\ffmpeg\bin`)
+     - Click "OK" to save all dialogs
+     - **Restart your command prompt/PowerShell/VS Code**
+
+3. **Verify FFmpeg Installation**:
+   ```bash
+   ffmpeg -version
+   ```
+   If this command works, FFmpeg is properly installed.
+
+### Step 2: Download the Application
 
 1. **Clone or download this repository**
 ```bash
-git clone <repository-url>
-cd simpliest_ffmpeg_GUI
+git clone https://github.com/wnottellingyou/simplest-ffmpeg-GUI.git
+cd simplest-ffmpeg-GUI
 ```
 
 2. **No additional Python packages required**
@@ -116,6 +145,11 @@ cd simpliest_ffmpeg_GUI
 ```bash
 python main.py
 ```
+
+### Troubleshooting Installation
+- If you get "FFmpeg not found" error, FFmpeg is not properly installed or not in PATH
+- Make sure to restart your terminal/command prompt after adding FFmpeg to PATH
+- Test FFmpeg installation with `ffmpeg -version` before running the GUI
 
 ## Usage
 
